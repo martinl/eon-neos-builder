@@ -32,7 +32,7 @@ popd
 
 mkdir -p build/$BINUTILS
 pushd build/$BINUTILS
-../../src/$BINUTILS/configure --target=arm-none-eabi \
+../../src/$BINUTILS/configure CPPFLAGS="-D__ANDROID_API__=28" --target=arm-none-eabi \
   --build=aarch64-unknown-linux-gnu \
   --prefix=$PREFIX --with-cpu=cortex-m4 \
   --with-mode=thumb \
